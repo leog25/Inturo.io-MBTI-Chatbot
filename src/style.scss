@@ -1,0 +1,404 @@
+html, body {
+  font-family: 'IBM Plex Mono', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.text-container {
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 96px;
+  color: white;
+  opacity: 0.8;
+  user-select: none;
+  text-shadow: 1px 1px rgba(0,0,0,0.1);
+}
+
+.page-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  overflow: hidden;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 2vw; 
+}
+
+
+:root {
+  --color-bg1: rgb(0,0,0);
+  --color-bg2: rgb(0,0,0);
+  --color1: 150,155,155;
+  --color2: 150,155,155;
+  --color3: 150,155,155;
+  --color4: 150,155,155;
+  --color5: 150,155,155;
+  --color-interactive: 150,155,155;
+  --circle-size: 80%;
+  --blending: hard-light;
+}
+
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px; 
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(33, 33, 33, 0.7); 
+  border-radius: 10px;  
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.7); 
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(155, 155, 155, 0.7);
+}
+
+.gradient-bg {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  overflow: hidden;
+  background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+  top: 0;
+  left: 0;
+
+
+  svg {
+    display: none;
+  }
+
+
+  .gradients-container {
+    filter: url(#goo) blur(40px) ;
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .g1 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: center center;
+    animation: moveVertical 30s ease infinite;
+
+    opacity: 1;
+
+  }
+
+  .g2 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite;
+
+    opacity: 1;
+
+  }
+
+  .g3 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
+
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite;
+
+    opacity: 1;
+
+  }
+
+  .g4 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: calc(50% - 200px);
+    animation: moveHorizontal 40s ease infinite;
+
+    opacity: 0.7;
+ 
+  }
+
+  .g5 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: calc(var(--circle-size) * 2);
+    height: calc(var(--circle-size) * 2);
+    top: calc(50% - var(--circle-size));
+    left: calc(50% - var(--circle-size));
+
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite;
+
+    opacity: 1;
+
+  }
+
+  .interactive {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: 100%;
+    height: 100%;
+    top: -50%;
+    left: -50%;
+
+    opacity: 0.7;
+
+  }
+}
+
+.mode-container {
+  width: 60vw; 
+  height: 10vh; 
+  background-color: rgba(33, 33, 33, 0.7);
+  border-radius: 20px; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; 
+  z-index: 10;
+}
+
+.chat-container {
+  width: 60vw;  
+  height: 80vh; 
+  background-color: rgba(33, 33, 33, 0.7);
+  border-radius: 20px; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; 
+  z-index: 10;
+}
+
+.stat-container {
+  width: 20vw;  
+  height: 80vh;
+  background-color: rgba(33, 33, 33, 0.7);
+  border-radius: 20px; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  
+  overflow: hidden;
+  z-index: 10;
+  display: grid;
+  grid-template-rows: 500px 300px;
+  grid-template-columns: 1fr;     
+  gap: 10px;         
+  justify-items: center;
+}
+
+#chartdiv {
+  width: 90%;
+  height: 100%;
+  margin-top: 80px;
+}
+
+
+.chat-box {
+  padding: 1vw;
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 10;
+}
+
+
+.message {
+  padding: 0.4vw 0.8vw;
+  margin: 1vw 0;
+  border-radius: 10px;
+  max-width: 60%;
+  z-index: 10;
+  opacity: 1;
+  font-size: clamp(11px, 0.8vw, 0.8vw);
+}
+
+.user-message {
+  background-color: #0084ff;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+  z-index: 10;
+}
+
+.bot-message {
+  background-color: #eaeaea;
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+  z-index: 10;
+}
+
+.input-area {
+  font-family: 'IBM Plex Mono', monospace;
+  padding: 1vw;
+  display: flex;
+  background-color: rgba(33, 33, 33);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top: 1px solid #ccc;
+  z-index: 10;
+}
+
+input[type="text"] {
+  font-family: 'IBM Plex Mono', monospace;
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: rgba(33, 33, 33);
+  color: #ccc;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 100%;
+  z-index: 10;
+}
+
+button {
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: #0084ff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-left: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+button:hover {
+  background-color: #006bb3;
+}
+
+.typing-indicator {
+  position: relative;
+  display: inline-block;
+  padding: 0.4vw;
+  border-radius: 30px;
+  background-color: #e0e0e0;
+  border: 2px solid #f2f2f2;
+  max-width: 5vw;
+  text-align: center;
+}
+
+.dot {
+  height: 0.5vw;
+  width: 0.5vw;
+  margin: 0 0.1vw;
+  background-color: #aaa;
+  border-radius: 50%;
+  display: inline-block;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-0.6vw);
+  }
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.typing-indicator::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 20px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e0e0e0 transparent transparent transparent;
+}
