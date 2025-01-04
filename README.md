@@ -1,5 +1,5 @@
-# MBTI Career Exploration Chatbot for ENGR 110
-This project is an educational chatbot application designed for the University of Michigan's ENGR 110 course, which helps students explore careers in engineering. The chatbot leverages the OpenAI API to provide MBTI (Myers-Briggs Type Indicator)-based career guidance and insights into different engineering disciplines.
+# Conversational Personality Test for MBTI (this is not boring and tedious)
+This project is an educational chatbot application designed for the University of Michigan's ENGR 110 course, which helps students explore careers in engineering. The chatbot leverages the OpenAI API to provide MBTI (Myers-Briggs Type Indicator)-based career guidance and insights into different engineering disciplines. The project stemmed from the class requiring the students to take a tedious multiple choice question in order to determine personality type. These type of tests are unengaging and thus unable to accurately gauge a students personality. By leveraging conversational AI, I developed a fun project that turned a long tedious personality test into a natural conversation. 
 
 ## **Introduction**
 The MBTI Career Exploration Chatbot provides a conversational interface where students can discover engineering fields that align with their personality types. It is intended to foster self-reflection and assist students in making informed decisions about their engineering career paths.
@@ -60,12 +60,6 @@ npm run dev
 ```
 This will start the frontend application (usually accessible at `http://localhost:5173/`).
 
-## **Usage**
-- Open your browser and navigate to the provided localhost link.
-- Interact with the chatbot to:
-  - Input your MBTI personality type.
-  - Explore career advice for different MBTI types.
-  - Learn about how each engineering discipline aligns with certain strengths and preferences.
 
 ## **Acknowledgments**
 - **ENGR 110:** Special thanks to the University of Michigan Engineering Department for fostering career exploration.
