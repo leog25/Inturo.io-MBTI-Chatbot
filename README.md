@@ -1,4 +1,4 @@
-# Conversational Personality Test for MBTI (this is not boring and tedious)
+# Conversational Personality Test for MBTI 
 This project is an educational chatbot application designed for the University of Michigan's ENGR 110 course, which helps students explore careers in engineering. The chatbot leverages the OpenAI API to provide MBTI (Myers-Briggs Type Indicator)-based career guidance and insights into different engineering disciplines. The project stemmed from the class requiring the students to take a tedious multiple choice question in order to determine personality type. These type of tests are unengaging and thus unable to accurately gauge a students personality. By leveraging conversational AI, I developed a fun project that turned a long tedious personality test into a natural conversation. 
 
 ## **Introduction**
